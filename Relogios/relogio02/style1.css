@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1e1e1e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTAINER */
+.container {
+    width: 300px;
+    height: 300px;
+}
+
+/* RELÓGIO */
+.clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #2c2c2c;
+    border: 8px solid #ffffff;
+}
+
+/* PONTO CENTRAL */
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* NÚMEROS */
+.clock span {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+    z-index: 1;
+}
+
+.clock span b {
+    display: inline-block;
+    font-size: 20px;
+    color: #ffffff;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+/* PONTEIROS */
+.hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    z-index: 5;
+}
+
+.hand i {
+    display: block;
+    width: 4px;
+    height: var(--h);
+    background: var(--cir);
+    border-radius: 8px;
+}
+
+/* AJUSTES INDIVIDUAIS */
+#hour i {
+    width: 6px;
+}
+
+#min i {
+    width: 4px;
+}
+
+#sec i {
+    width: 2px;
+}

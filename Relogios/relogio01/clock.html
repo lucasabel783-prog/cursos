@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../EX010/favicon.ico" type="image/x-icon">
+<title>Relógio</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #1b2735, #090a0f);
+    overflow: hidden;
+}
+
+.clock{
+    color: #00fff2;
+    font-size: 4em;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px 60px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(0, 255, 242, 0.5);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+</style>
+</head>
+
+<body>
+<div class="clock" id="clock"></div>
+
+<script>
+function updateClock(){
+    const now = new Date();
+    const time = now.toLocaleTimeString('pt-PT');
+    document.getElementById("clock").textContent = time;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+</body>
+</html>
