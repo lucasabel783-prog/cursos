@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Snake Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TELA INICIAL -->
+  <!-- TELA DE CONFIG -->
   <div class="start-screen">
     <h1>Snake Game</h1>
 
-    <div class="input-group">
-      <label for="playerName">Nome:</label>
-      <input type="text" id="playerName" placeholder="Digite seu nome">
-    </div>
+    <input id="playerName" type="text" placeholder="Seu nome">
 
-    <div class="input-group">
-      <label for="snakeColor">Cor da cobra:</label>
-      <input type="color" id="snakeColor" value="#ffffff">
-    </div>
+    <input id="snakeColor" type="color" value="#ffffff">
+
+    <select id="difficulty">
+      <option value="easy">Fácil</option>
+      <option value="medium">Médio</option>
+      <option value="hard">Difícil</option>
+      <option value="extreme">Extrema</option>
+    </select>
 
     <button id="startBtn">Começar</button>
   </div>
 
-<div class="hud">
-  <div class="score">score: <span class="score--value">00</span></div>
-  <div class="timer">Tempo: <span id="time">00:00</span></div>
-</div>
+  <!-- SCORE + TIMER + RANKING -->
+  <div class="hud">
+    <div class="score">Score: <span class="score--value">00</span></div>
+    <div class="timer">Tempo: <span id="time">00:00</span></div>
 
-  <!-- GAME OVER -->
+    <div class="ranking">
+      <div class="ranking-header">
+        <span>Ranking</span>
+        <div class="ranking-tabs">
+          <button class="tab active" data-diff="all">Geral</button>
+          <button class="tab" data-diff="easy">Fácil</button>
+          <button class="tab" data-diff="medium">Médio</button>
+          <button class="tab" data-diff="hard">Difícil</button>
+          <button class="tab" data-diff="extreme">Extrema</button>
+        </div>
+      </div>
+
+      <div id="rankingList" class="ranking-list"></div>
+    </div>
+
+    <button id="configBtn" class="config-btn">Mudar Nome/Cor</button>
+  </div>
+
+  <!-- MENU GAME OVER -->
   <div class="menu-screen">
-      <span class="game-over">game over</span>
-      <span class="final-score">score: <span>00</span></span>
-      <button class="btn-play">Jogar novamente</button>
+    <span class="game-over">Game Over</span>
+    <span class="final-score">Score: <span></span></span>
+    <button class="btn-play">Jogar novamente</button>
   </div>
 
   <canvas width="600" height="600"></canvas>
