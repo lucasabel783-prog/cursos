@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Snake Game</title>
+</head>
+<body>
+
+  <!-- TELA INICIAL -->
+  <div class="start-screen">
+    <h1>Snake Game</h1>
+
+    <div class="input-group">
+      <label for="playerName">Nome:</label>
+      <input type="text" id="playerName" placeholder="Digite seu nome">
+    </div>
+
+    <div class="input-group">
+      <label for="snakeColor">Cor da cobra:</label>
+      <input type="color" id="snakeColor" value="#ffffff">
+    </div>
+
+    <button id="startBtn">Começar</button>
+  </div>
+
+<div class="hud">
+  <div class="score">score: <span class="score--value">00</span></div>
+  <div class="timer">Tempo: <span id="time">00:00</span></div>
+</div>
+
+  <!-- GAME OVER -->
+  <div class="menu-screen">
+      <span class="game-over">game over</span>
+      <span class="final-score">score: <span>00</span></span>
+      <button class="btn-play">Jogar novamente</button>
+  </div>
+
+  <canvas width="600" height="600"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
