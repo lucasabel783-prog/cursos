@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo do Impostor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href=""></a>
+
+<div class="card">
+  <h1>🎭 Impostor</h1>
+
+  <div id="setup">
+    <label>
+      Jogadores (3–10):
+      <input type="number" id="playersInput" min="3" max="10" value="4">
+    </label>
+
+    <label>
+      Impostores (1–3):
+      <input type="number" id="impostorsInput" min="1" max="3" value="1">
+    </label>
+
+    <label>
+      Dificuldade da dica:
+      <select id="difficulty">
+        <option value="0">Fácil</option>
+        <option value="1">Média</option>
+        <option value="2">Difícil</option>
+      </select>
+    </label>
+
+    
+
+    <button id="generateNamesBtn">Adicionar nomes</button>
+    <div id="namesContainer"></div>
+
+    <p id="impostorCount"></p>
+    <p id="error" class="error"></p>
+
+    <button id="startBtn">Começar jogo</button>
+  </div>
+
+  <div id="game" class="hidden">
+    <p id="playerText"></p>
+
+    <!-- BOTÃO SEGURAR PARA VER -->
+    <button id="revealBtn" class="revealBtn">
+      Segure para ver sua palavra/dica
+    </button>
+
+    <div class="word hidden" id="word"></div>
+    <button id="nextBtn">Próximo</button>
+  </div>
+
+  <div id="end" class="hidden">
+    <p>Todos viram sua palavra!</p>
+    <strong>Agora debatam e encontrem os impostores 😈</strong>
+    <button id="nextRoundBtn">Próxima rodada</button>
+    <button id="resetBtn">Reiniciar jogo</button>
+  </div>
+</div>
+<a href="ajuda.html" class="ajuda">Ajuda</a>
+<script src="script.js"></script>
+</body>
+</html>

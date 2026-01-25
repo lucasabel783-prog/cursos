@@ -1,0 +1,239 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  user-select: none; /* anti-cheat: não permite selecionar texto */
+}
+
+.card {
+  background: #1e293b;
+  padding: 24px;
+  border-radius: 16px;
+  width: 360px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input, select {
+  padding: 6px;
+  margin-top: 6px;
+}
+
+.name-input {
+  width: 90%;
+  margin: 6px 0;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+.word {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #f87171;
+  margin-top: 8px;
+}
+
+.revealBtn {
+  width: 100%;
+  background: #6d28d9;
+}
+
+/* Modal de ajuda */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 16px;
+  width: 320px;
+  text-align: left;
+}
+
+.titulo-ajuda {
+    position: absolute;
+    top: 2%;
+}
+
+.h3 {
+    position: absolute;
+    top: 11%;
+}
+
+.p1 {
+    position: absolute;
+    top: 20%;
+    
+}
+
+.hr {
+    width: 36rem;
+    position: absolute;
+    top: 33%;
+}
+.h31 {
+    position: absolute;
+    top: 35%;
+}
+.hr1 {
+    width: 36rem;
+    position: absolute;
+    top: 59%;
+}
+.h32 {
+    position: absolute;
+    top: 61%;
+}
+.p2 {
+    position: absolute;
+    top: 67%;
+}
+.ul {
+    position: absolute;
+    top: 72%;
+}
+.hr2 {
+  width: 36rem;
+  position: absolute;
+  top: 82%;
+}
+.h33 {
+  position: absolute;
+  top: 84%;
+}
+.ul1 {
+  position: absolute;
+  top: 89%;
+}
+.hr3 {
+  width: 36rem;
+  position: absolute;
+  top: 102%;
+}
+.h34 {
+  position: absolute;
+  top: 104%;
+}
+.p3 {
+  position: absolute;
+  top: 110%;
+}
+.hr4 {
+  width: 36rem;
+  position: absolute;
+  top: 117%;
+}
+.h35 {
+  position: absolute;
+  top: 119%;
+}
+.p4 {
+  position: absolute;
+  top: 124%;
+}
+.ol1 {
+  position: absolute;
+  top: 129%;
+}
+.hr5 {
+  width: 36rem;
+  position: absolute;
+  top: 144%;
+}
+.h36 {
+  position: absolute;
+  top: 146%;
+}
+.p5 {
+  position: absolute;
+  top: 151%;
+}
+.ul2 {
+  position: absolute;
+  top: 155%;
+}
+.p6 {
+  position: absolute;
+  top: 159%;
+}
+.ul3 {
+  position: absolute;
+  top: 163%;
+}
+.hr6 {
+  width: 36rem;
+  position: absolute;
+  top: 169%;
+}
+.h37 {
+  position: absolute;
+  top: 171%;
+}
+.p7 {
+  position: absolute;
+  top: 176%;
+}
+.hr7 {
+  position: absolute;
+  top: 185%;
+  width: 41.5rem;
+}
+.voltar2 {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+.ajuda {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  top: 4%;
+  left: 4%;
+}
