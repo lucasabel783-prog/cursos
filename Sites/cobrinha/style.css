@@ -35,7 +35,8 @@ canvas {
 }
 
 .start-screen input,
-.start-screen select {
+.start-screen select,
+.start-screen label {
   padding: 8px;
   border-radius: 8px;
   border: none;
@@ -63,7 +64,8 @@ canvas {
 }
 
 .score,
-.timer {
+.timer,
+.best-score {
   font-size: 18px;
   font-weight: 600;
 }
@@ -72,7 +74,7 @@ canvas {
   background: rgba(0,0,0,0.7);
   padding: 10px;
   border-radius: 12px;
-  width: 220px;
+  width: 240px;
 }
 
 .ranking-header {
@@ -94,6 +96,9 @@ canvas {
   justify-content: space-between;
   gap: 6px;
   font-size: 14px;
+  background: rgba(255,255,255,0.05);
+  padding: 6px;
+  border-radius: 8px;
 }
 
 .config-btn {
@@ -146,4 +151,28 @@ canvas {
 .ranking-tabs button.active {
   background: #fff;
   color: #000;
+}
+
+.pause-overlay {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 50;
+  background: rgba(0,0,0,0.7);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.pause-overlay span {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.pause-overlay small {
+  font-size: 14px;
+  margin-top: 10px;
 }
