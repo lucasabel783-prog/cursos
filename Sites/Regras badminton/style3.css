@@ -1,0 +1,152 @@
+/* Reset básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Faixa de degradê no topo */
+.top-degrade {
+    height: 100px;
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    width: 100%;
+}
+
+/* Título centralizado */
+h1 {
+    position: absolute;
+    top: 50px; /* Ajustado para ficar centralizado verticalmente na faixa de 100px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Container do Dropdown (Ícone do Menu) */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    z-index: 10;
+}
+
+/* O símbolo ☰ propriamente dito */
+.dropdown > a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 2rem;
+    display: block;
+    line-height: 1;
+}
+
+/* Menu que aparece ao passar o mouse */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e88e5;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Links dentro do menu dropdown */
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado dos itens internos */
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Efeito de hover nos links internos */
+.dropdown-menu li a:hover {
+    background-color: #1e88e5;
+    border-radius: 4px;
+}
+
+/* Mostra o menu quando passa o mouse no container */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo do botão de login (caso queira manter como botão destacado) */
+.login {
+    background: #1e88e5;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.login:hover {
+    background: #1565c0;
+}
+
+.galeria-jogadas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.jogada-item {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 15px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.video-placeholder {
+    background: #ddd;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.emoji-grande { font-size: 3rem; }
+
+.quiz-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #1e88e5;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+.opcoes button {
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1e88e5;
+    transition: 0.3s;
+}
+.opcoes button:hover { background: #e3f2fd; }
+#resultado { margin-top: 15px; font-weight: bold; min-height: 20px; }
+
+.titulo-secao{
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 10px;
+    background: #43a047;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+

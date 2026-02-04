@@ -1,0 +1,294 @@
+/* Reset básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Faixa de degradê no topo */
+.top-degrade {
+    height: 100px;
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    width: 100%;
+}
+
+/* Título centralizado */
+h1 {
+    position: absolute;
+    top: 50px; /* Ajustado para ficar centralizado verticalmente na faixa de 100px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Container do Dropdown (Ícone do Menu) */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    z-index: 10;
+}
+
+/* O símbolo ☰ propriamente dito */
+.dropdown > a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 2rem;
+    display: block;
+    line-height: 1;
+}
+
+/* Menu que aparece ao passar o mouse */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e88e5;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Links dentro do menu dropdown */
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado dos itens internos */
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Efeito de hover nos links internos */
+.dropdown-menu li a:hover {
+    background-color: #1e88e5;
+    border-radius: 4px;
+}
+
+/* Mostra o menu quando passa o mouse no container */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo do botão de login (caso queira manter como botão destacado) */
+.login {
+    background: #1e88e5;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.login:hover {
+    background: #1565c0;
+}
+
+/* O seu H3 favorito */
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    padding-left: 15px;
+     
+    margin: 30px 20px 10px 20px; /* Mais espaço em cima, menos embaixo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bad{
+    color: #1e88e5;
+    border-left: 5px solid #1e88e5;
+}
+
+/* O parágrafo que combina com ele */
+p {
+    color: #555; /* Cinza escuro para não cansar os olhos */
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6; /* Espaçamento entre linhas (crucial para beleza) */
+    margin: 0 20px 20px 40px; /* Recuo à esquerda maior (40px) para alinhar com o texto do H3 */
+    max-width: 800px; /* Evita que o texto fique largo demais em telas grandes */
+    text-align: justify; /* Opcional: deixa as bordas retas */
+}
+
+.b{
+    color: #43a047;
+    border-left: 5px solid #43a047;
+}
+
+.img{
+    width: 30rem;
+    position: absolute;
+    left: 20%;
+}
+
+/* Container da pesquisa posicionado no topo DIREITO */
+.search-container {
+    position: absolute;
+    top: 25px;    /* Alinhado verticalmente com o menu e o título */
+    right: 20px;  /* Colado à margem direita */
+    max-width: 180px; 
+    z-index: 20;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo compacto e elegante */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); /* Transparência para o degradê */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 5px 12px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+/* Quando clicas para escrever, ela expande para a esquerda */
+.search-box:focus-within {
+    background: white;
+    width: 157px; 
+    border-color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#campoPesquisa {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.85rem;
+    background: transparent;
+    color: white; /* Texto branco sobre o degradê */
+}
+
+/* Cor do texto muda para escuro quando o fundo fica branco no foco */
+.search-box:focus-within #campoPesquisa {
+    color: #333;
+}
+
+.search-icon {
+    margin-right: 8px;
+    font-size: 0.9rem;
+    filter: brightness(0) invert(1); /* Lupa branca */
+    transition: filter 0.3s;
+}
+
+.search-box:focus-within .search-icon {
+    filter: none; /* Lupa volta a ser escura no fundo branco */
+}
+
+.resultados-lista {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    margin-top: 10px;
+    display: none; /* Escondido por padrão */
+    overflow: hidden;
+    z-index: 100;
+}
+
+.resultado-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.resultado-item:hover {
+    background: #f0f7ff;
+    color: #1e88e5;
+}
+
+.resultado-item span {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+:root {
+    --font-size-base: 1rem;
+}
+
+body {
+    font-size: var(--font-size-base);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Botão da Engrenagem */
+#config-btn {
+    position: fixed;
+    bottom: 700px;
+    right: 650px;
+    z-index: 1000;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background: #1e88e5;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* O painel começa escondido à direita */
+.config-side-panel {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Escondido fora do ecrã */
+    width: 260px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: right 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99); /* Animação suave */
+    z-index: 2000;
+    padding: 20px;
+}
+
+/* Esta classe será adicionada pelo JavaScript para abrir o painel */
+.config-side-panel.active {
+    right: 0; /* Desliza para dentro do ecrã */
+}
+
+.config-side-panel.aberto { right: 0; }
+
+.config-item { margin-bottom: 25px; }
+
+.config-item label { display: block; margin-bottom: 10px; font-weight: bold; }
+
+/* Overlay de Brilho */
+#overlay-brilho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    pointer-events: none; /* Não bloqueia cliques */
+    z-index: 999;
+    opacity: 0; /* Começa em 0 (100% brilho) */
+}
+
+/* Modo Escuro (Classe aplicada ao body) */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: white !important;
+}
+body.dark-mode .card { background: #1e1e1e; color: white; border-color: #333; }
+
+.fechar-btn { width: 100%; padding: 10px; border: none; background: #ddd; border-radius: 5px; cursor: pointer; }

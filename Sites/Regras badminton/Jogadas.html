@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="top-degrade"></div>
+    <h1>Badminton</h1>
+
+    <li class="dropdown">
+      <a href="#">☰</a>
+      <ul class="dropdown-menu">
+        <li><a href="login.html" class="login">Login</a></li>
+        <li><a href="index.html" class="login">Casa</a></li>
+        <li><a href="campo.html" class="login">Campo</a></li>
+        <li><a href="regras.html" class="login">Regras</a></li>
+        <li><a href="Quiz.html" class="login">Quiz</a></li>
+        <li><a href="download.html" class="login">Download</a></li>
+      </ul>
+    </li>
+
+    <h2 class="titulo-secao"> Exemplos de Jogadas</h2>
+<div class="galeria-jogadas">
+    <div class="jogada-item">
+        <div class="video-placeholder">
+            <span class="emoji-grande">🏸</span>
+        </div>
+        <h4>Sob a Rede</h4>
+        <p>O volante deve passar por CIMA da rede. Tocar a rede é falta!</p>
+    </div>
+    <div class="jogada-item">
+        <div class="video-placeholder">
+            <span class="emoji-grande">🚫</span>
+        </div>
+        <h4>Fora do Campo</h4>
+        <p>A linha faz parte do campo. Se tocar na linha, é dentro!</p>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h3>🧠 Desafio de Regras</h3>
+    <p id="pergunta">Se o volante tocar na fita da rede e cair no campo adversário durante a jogada, o que acontece?</p>
+    <div class="opcoes">
+        <button onclick="verificar(true)">O jogo segue (Ponto válido)</button>
+        <button onclick="verificar(false)">É falta (Ponto do adversário)</button>
+    </div>
+    <p id="resultado"></p>
+</div>
+<script>
+    function verificar(correto) {
+    const feedback = document.getElementById('resultado');
+    if (correto) {
+        feedback.innerHTML = "✅ Correto! O jogo só para se o volante ficar presa na rede.";
+        feedback.style.color = "#afffba";
+    } else {
+        feedback.innerHTML = "❌ Errado! No Badminton, se tocar na fita e passar, o jogo continua.";
+        feedback.style.color = "#ffbaba";
+    }
+}
+</script>
+</body>
+</html>

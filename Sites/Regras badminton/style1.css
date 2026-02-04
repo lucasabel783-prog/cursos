@@ -1,0 +1,156 @@
+/* Reset básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Faixa de degradê no topo */
+.top-degrade {
+    height: 100px;
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    width: 100%;
+}
+
+/* Título centralizado */
+h1 {
+    position: absolute;
+    top: 50px; /* Ajustado para ficar centralizado verticalmente na faixa de 100px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Container do Dropdown (Ícone do Menu) */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    z-index: 10;
+}
+
+/* O símbolo ☰ propriamente dito */
+.dropdown > a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 2rem;
+    display: block;
+    line-height: 1;
+}
+
+/* Menu que aparece ao passar o mouse */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e88e5;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Links dentro do menu dropdown */
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado dos itens internos */
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Efeito de hover nos links internos */
+.dropdown-menu li a:hover {
+    background-color: #1e88e5;
+    border-radius: 4px;
+}
+
+/* Mostra o menu quando passa o mouse no container */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo do botão de login (caso queira manter como botão destacado) */
+.login {
+    background: #1e88e5;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.login:hover {
+    background: #1565c0;
+}
+
+/* Estilo para o H2 (Título da Seção) */
+h2 {
+    color: #1e88e5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 1.8rem;
+}
+
+/* Container dos Cards ajustado para centralizar a última linha */
+.cards {
+    display: flex;
+    flex-wrap: wrap;       /* Permite que os cards pulem de linha */
+    justify-content: center; /* Centraliza os itens, inclusive os que "sobram" */
+    gap: 1.5rem;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajuste no tamanho dos cards para manter o padrão */
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    
+    /* Define o tamanho base: 250px, mas cresce se houver espaço */
+    flex: 1 1 250px; 
+    max-width: 350px; /* Impede que o card fique gigante se sobrar sozinho */
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.15); /* Sombra azulada no hover */
+    border-color: #1e88e5;
+}
+
+/* H3 dentro do Card (estilo que você gostou, mas adaptado para o card) */
+.card h3 {
+    color: #1e88e5;
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    padding-left: 10px;
+    border-left: 4px solid #43a047; /* Verde para variar um pouco */
+    text-transform: none; /* No card fica melhor sem ser tudo maiúsculo */
+}
+
+/* Parágrafo dentro do Card */
+.card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0; /* Remove margens extras */
+    padding-left: 0; /* Remove o recuo exagerado que usamos no texto longo */
+}
+

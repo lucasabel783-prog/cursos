@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style4.css">
+    <title>Badminton</title>
+</head>
+<body>
+    <div class="top-degrade"></div>
+    <h1>Badminton</h1>
+
+    <li class="dropdown">
+      <a href="#">☰</a>
+      <ul class="dropdown-menu">
+        <li><a href="login.html" class="login">Login</a></li>
+        <li><a href="index.html" class="login">Casa</a></li>
+        <li><a href="regras.html" class="login">Regras</a></li>
+        <li><a href="Jogadas.html" class="login">Jogadas</a></li>
+        <li><a href="download.html" class="login">Download</a></li>
+        <li><a href="campo.html" class="login">Campo</a></li>
+      </ul>
+    </li>
+
+    <section class="quiz-section">
+    <div class="quiz-card">
+        <h2>🏆 Desafio de Badminton</h2>
+        <div id="setup-quiz">
+            <p>Escolha um nível para começar:</p>
+            <div class="niveis-btns">
+                <button onclick="iniciarQuiz('facil')">✔️ Fácil</button>
+                <button onclick="iniciarQuiz('medio')">✔️ Médio</button>
+                <button onclick="iniciarQuiz('dificil')">✔️ Difícil</button>
+            </div>
+        </div>
+
+        <div id="quiz-jogo" style="display: none;">
+            <div class="progresso"><span id="pergunta-atual">1</span>/3</div>
+            <p id="pergunta-texto"></p>
+            <div id="opcoes-container" class="opcoes-col"></div>
+            <p id="feedback"></p>
+        </div>
+
+        <div id="quiz-resultado" style="display: none;">
+            <h3>Fim de Jogo!</h3>
+            <p id="score-texto"></p>
+            <button onclick="resetQuiz()">Tentar Novamente</button>
+        </div>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

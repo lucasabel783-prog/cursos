@@ -1,0 +1,127 @@
+/* Reset básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Faixa de degradê no topo */
+.top-degrade {
+    height: 100px;
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    width: 100%;
+}
+
+/* Título centralizado */
+h1 {
+    position: absolute;
+    top: 50px; /* Ajustado para ficar centralizado verticalmente na faixa de 100px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Container do Dropdown (Ícone do Menu) */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    z-index: 10;
+}
+
+/* O símbolo ☰ propriamente dito */
+.dropdown > a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 2rem;
+    display: block;
+    line-height: 1;
+}
+
+/* Menu que aparece ao passar o mouse */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e88e5;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Links dentro do menu dropdown */
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado dos itens internos */
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Efeito de hover nos links internos */
+.dropdown-menu li a:hover {
+    background-color: #1e88e5;
+    border-radius: 4px;
+}
+
+/* Mostra o menu quando passa o mouse no container */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo do botão de login (caso queira manter como botão destacado) */
+.login {
+    background: #1e88e5;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.login:hover {
+    background: #1565c0;
+}
+
+.secao-download {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f7ff;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 15px;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1e88e5; /* Azul do seu site */
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
+}
+
+.btn-download:hover {
+    background-color: #1565c0;
+    transform: scale(1.05); /* Dá um leve aumento ao passar o mouse */
+    color: white;
+}
+
+.icone-dl {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+

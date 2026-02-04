@@ -1,0 +1,267 @@
+/* Reset básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Faixa de degradê no topo */
+.top-degrade {
+    height: 100px;
+    background: linear-gradient(135deg, #1e88e5, #43a047);
+    width: 100%;
+}
+
+/* Título centralizado */
+h1 {
+    position: absolute;
+    top: 50px; /* Ajustado para ficar centralizado verticalmente na faixa de 100px */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+/* Container do Dropdown (Ícone do Menu) */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    list-style: none;
+    z-index: 10;
+}
+
+/* O símbolo ☰ propriamente dito */
+.dropdown > a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 2rem;
+    display: block;
+    line-height: 1;
+}
+
+/* Menu que aparece ao passar o mouse */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e88e5;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Links dentro do menu dropdown */
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none; /* Remove sublinhado dos itens internos */
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Efeito de hover nos links internos */
+.dropdown-menu li a:hover {
+    background-color: #1e88e5;
+    border-radius: 4px;
+}
+
+/* Mostra o menu quando passa o mouse no container */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo do botão de login (caso queira manter como botão destacado) */
+.login {
+    background: #1e88e5;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.login:hover {
+    background: #1565c0;
+}
+
+/* Estilização da Seção */
+.titulo-quadra {
+    text-align: center;
+    color: #1e88e5;
+    margin-top: 50px;
+}
+
+/* Container da Quadra */
+.quadra-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    perspective: 1000px; /* Efeito 3D leve */
+}
+
+.quadra {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background-color: #43a047; /* Verde oficial */
+    border: 4px solid white;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+/* Linhas da Quadra */
+.rede {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Os Hotspots (Círculos que brilham) */
+.hotspot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* Posições dos pontos */
+.h-medidas { top: 5%; left: 10%; }
+.h-servico { top: 60%; left: 30%; }
+.h-duplas  { top: 85%; left: 70%; }
+.h-rede { top: 30%; left: 49%; }
+.h-pares { top:15%; left: 92.3%}
+
+/* Balão de Informação (Tooltip) */
+.tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 150%; /* Aparece acima do ponto */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.85rem;
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Triângulo do balão */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Mostrar ao passar o mouse ou clicar (focus) */
+.hotspot:hover .tooltip, .hotspot:focus .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Configuração geral das linhas internas */
+.linha {
+    position: absolute;
+    background-color: white;
+}
+
+/* Linhas de Serviço Curto (aquelas perto da rede) */
+.linha-servico-curto {
+    width: 2px;
+    height: 100%;
+    top: 0;
+}
+.linha-servico-curto.esquerda { left: 35%; }
+.linha-servico-curto.direita { right: 35%; }
+
+/* Linhas Centrais (dividem os campos de saque) */
+.linha-central {
+    height: 2px;
+    width: 35%; /* Vai da linha de serviço até o fundo */
+    top: 50%;
+}
+.linha-central.esquerda { left: 0; }
+.linha-central.direita { right: 0; }
+
+.quadra {
+    width: 100%;
+    max-width: 700px;
+    height: 350px;
+    background-color: #2e7d32; /* Verde quadra */
+    border: 3px solid white; /* Linha de fundo externa */
+    position: relative;
+    margin: 0 auto;
+}
+
+.quadra {
+    width: 100%;
+    max-width: 700px;
+    height: 350px;
+    background-color: #2e7d32; /* Verde quadra */
+    border: 3px solid white; /* Linha de fundo externa */
+    position: relative;
+    margin: 0 auto;
+}
+
+.linha { position: absolute; background-color: white; }
+
+/* 1. Corredores Laterais (Horizontais) */
+.corredor-superior { width: 100%; height: 2px; top: 9%; left: 0; }
+.corredor-inferior { width: 100%; height: 2px; bottom: 9%; left: 0; }
+
+/* 2. Linhas de Serviço Curto (Verticais perto da rede) */
+.servico-curto { width: 2px; height: 100%; top: 0%; }
+.servico-curto.esquerda { left: 38%; }
+.servico-curto.direita { right: 38%; }
+
+/* 3. Linhas de Serviço Longo para Duplas (Verticais perto do fundo) */
+.servico-longo-duplas { width: 2px; height: 100%; top: 0%; }
+.servico-longo-duplas.esquerda { left: 6%; }
+.servico-longo-duplas.direita { right: 6%; }
+
+/* 4. Linhas Centrais (Dividem os quadrados de saque) */
+.central-esquerda { height: 2px; width: 38%; top: 50%; left: 0; }
+.central-direita { height: 2px; width: 38%; top: 50%; right: 0; }
+
+/* Ajuste da Rede */
+.rede {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-left: 1px dashed #333;
+    z-index: 2;
+}
+
